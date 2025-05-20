@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
     <title>For Mariam 🦋</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap"
@@ -114,15 +117,69 @@
         }
       }
 
-      @media (max-width: 600px) {
-        h1 {
-          font-size: 2.2em;
+      @media (max-width: 1024px) {
+        .card {
+          padding: 20px;
         }
-        hw {
+        h1 {
+          font-size: 2.4em;
+        }
+        h2 {
+          font-size: 1.6em;
+        }
+        p {
+          font-size: 1.3em;
+        }
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2em;
+        }
+        h2 {
+          font-size: 1.4em;
+        }
+        p {
+          font-size: 1.1em;
+        }
+        .custom-player {
+          flex-direction: column;
+          align-items: center;
+        }
+        .custom-player button {
+          margin-bottom: 10px;
+        }
+        .equalizer {
+          margin-top: 12px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 1.6em;
+        }
+        h2 {
           font-size: 1.2em;
         }
         p {
           font-size: 1em;
+          line-height: 1.4;
+        }
+        .card {
+          padding: 16px;
+        }
+        .custom-player {
+          padding: 10px;
+        }
+        .custom-player button {
+          width: 40px;
+          height: 40px;
+        }
+        .love-bubble {
+          font-size: 0.9em;
+          padding: 8px 14px;
+          bottom: 20px;
+          right: 12px;
         }
       }
 
@@ -674,6 +731,7 @@
         player = new YT.Player("player", {
           height: "0",
           width: "0",
+
           playerVars: {
             listType: "playlist",
             list: "PLs23VVad97oQLi8DeBcI7NxQudNYaWbFz", // your playlist ID
