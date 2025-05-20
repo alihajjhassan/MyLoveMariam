@@ -8,6 +8,8 @@
       href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" href="https://emojiapi.dev/api/v1/1f98b.svg" />
+
     <style>
       * {
         margin: 0;
@@ -499,6 +501,25 @@
           opacity: 1;
         }
       }
+      .love-bubble {
+        animation: heartbeat 2s infinite;
+      }
+
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        25% {
+          transform: scale(1.05);
+        }
+        50% {
+          transform: scale(0.95);
+        }
+        75% {
+          transform: scale(1.02);
+        }
+      }
     </style>
   </head>
   <body>
@@ -608,8 +629,17 @@
       </div>
     </div>
     <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
     <script>
+      window.onload = () => {
+        confetti({
+          particleCount: 100,
+          spread: 500,
+          origin: { y: 0 },
+        });
+      };
+
       // Sparkles
       const sparkleContainer = document.getElementById("sparkle-container");
       for (let i = 0; i < 25; i++) {
